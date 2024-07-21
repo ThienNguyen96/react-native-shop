@@ -4,6 +4,7 @@ import { ClerkProvider, ClerkLoaded, SignedIn, SignedOut } from "@clerk/clerk-ex
 import { Slot } from "expo-router"
 import { Text } from "react-native";
 import LoginScreen from '../components/LoginScreen';
+import * as SecureStore from 'expo-secure-store';
 
 
 
