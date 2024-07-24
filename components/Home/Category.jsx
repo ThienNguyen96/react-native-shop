@@ -6,10 +6,12 @@ import { db } from '../../configs/FirebaseConfig';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import CategoryItem from './CategoryItem';
+import { useRouter } from 'expo-router';
 
 export default function Category() {
 
   const [categoryList, setCategoryList] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     getCategoryList();
@@ -56,7 +58,7 @@ export default function Category() {
           <CategoryItem  
             category={item} 
             key={index}
-            onCategoryPress={(category) => console.log(category)}
+            onCategoryPress={() => router.push('/businesslist/'+ item.name)}
           />
         )} />
     </View>
